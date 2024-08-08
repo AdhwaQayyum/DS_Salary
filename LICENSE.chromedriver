@@ -1553,10 +1553,13 @@ assumed by the product vendor.
 libavcodec/fft_fixed_32.c
 libavcodec/fft_init_table.c
 libavcodec/fft_table.h
+libavcodec/mdct_fixed_32.c
 libavcodec/mips/aacdec_mips.h
 libavcodec/mips/aacsbr_mips.h
+libavcodec/mips/amrwbdec_mips.h
 libavcodec/mips/compute_antialias_fixed.h
 libavcodec/mips/compute_antialias_float.h
+libavcodec/mips/lsp_mips.h
 libavutil/fixed_dsp.c
 libavutil/fixed_dsp.h
 libavutil/mips/libm_mips.h
@@ -3087,7 +3090,7 @@ best of our understanding.
 The Modified (3-clause) BSD License
 ===================================
 
-Copyright (C)2009-2023 D. R. Commander.  All Rights Reserved.<br>
+Copyright (C)2009-2022 D. R. Commander.  All Rights Reserved.<br>
 Copyright (C)2015 Viktor Szathmáry.  All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without

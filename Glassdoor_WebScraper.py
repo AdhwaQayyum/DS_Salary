@@ -26,7 +26,7 @@ def get_jobs( keyword, num_jobs, verbose, path, slp_time):
     driver = webdriver.Chrome(executable_path=path, options=options)
     driver.set_window_size(1120, 1000)
 
-    url = "https://www.glassdoor.com/Job/us-"+keyword+"-jobs-SRCH_IL.0,2_IN1_KO3,17.htm?clickSource=searchBox"
+    url = "https://www.glassdoor.com/Job/united-states-"+keyword+"-jobs-SRCH_IL.0,13_IN1_KO14,28.htm?sortBy=date_desc"
     driver.get(url)
     jobs = []
 
@@ -42,7 +42,7 @@ def get_jobs( keyword, num_jobs, verbose, path, slp_time):
         except ElementClickInterceptedException:
             pass
 
-        time.sleep(.1)
+        time.sleep(0.1)
 
         try:
             driver.find_element(By.CSS_SELECTOR,'[alt="Close"]').click() #clicking to the X.
@@ -61,14 +61,14 @@ def get_jobs( keyword, num_jobs, verbose, path, slp_time):
                 break
 
             job_button.click()  #You might 
-            time.sleep(3)
+            time.sleep(0.3)
             collected_successfully = False
             
             
             while not collected_successfully:    
 
                 try:
-                    company_name = driver.find_element(By.XPATH,'.//div[@data-test="employerName"]').text
+                    company_name = driver.find_element(By.XPATH,'.//*[@id="JDCol"]/div/article/div/div[1]/div/div/div[1]/div[3]/div[1]/div[1]').text
                     location = driver.find_element(By.XPATH,'.//div[@data-test="location"]').text
                     job_title = driver.find_element(By.XPATH,'.//div[(@data-test="jobTitle")]').text
                     job_description = driver.find_element(By.XPATH,'.//div[@class="jobDescriptionContent desc"]').text
